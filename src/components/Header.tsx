@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="w-full p-5 border-b border-b-white border-opacity-30 flex items-center justify-between top-0 fixed">
+      <div className="w-full z-50 p-5 border-b bg-black border-b-white border-opacity-30 flex items-center justify-between top-0 fixed">
         {/* Logo */}
         <div className="text-xl tracking-widest gradient-text font-semibold">
           <Link href="/">RAHAT ALI BAIG</Link>
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Nav */}
       <div
-        className={`fixed w-full h-screen p-10 overflow-y-auto bg-black z-10 transition-all flex justify-center duration-500 ${toggleNav
+        className={`fixed w-full h-screen p-10 overflow-y-auto bg-black z-[60] transition-all flex justify-center duration-500 ${toggleNav
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none z-0"
           }`}

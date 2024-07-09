@@ -1,15 +1,17 @@
-import React from 'react';
+"use client";
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { IoSparklesSharp } from 'react-icons/io5';
 import TypingBox from './TypingBox';
 
 const Hero = () => {
-    AOS.init({ duration: 700 });
+    useEffect(() => {
+        AOS.init({ duration: 700 });
+    }, [])
 
     return (
-        <div className='w-full max-h-screen flex items-center justify-center gap-6'>
-            <div className='p-20 flex flex-col justify-center w-1/2 h-screen'>
+        <div className='w-full min-h-screen flex lg:flex-row flex-col items-center justify-center gap-6'>
+            <div className='py-28 lg:px-20 px-12 flex flex-col justify-center w-full xlg:w-1/2 min-h-screen'>
                 <TypingBox
                     textToType="Hi. I'm a Full Stack Developer ready to build Blazing Websites. I specialize in React, Node.js, and more... Let's create something amazing together."
                 />

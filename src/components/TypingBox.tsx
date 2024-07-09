@@ -8,34 +8,32 @@ interface TypingBoxProps {
 }
 
 const TypingBox: React.FC<TypingBoxProps> = ({ textToType }) => {
-    const [typedText, setTypedText] = useState('');
-    const [isTyping, setIsTyping] = useState(true);
-
-    const typingSpeed = 50; // Adjust typing speed in milliseconds
+    const [displayedText, setDisplayedText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         AOS.init({ duration: 700 });
-
-        let charIndex = 0;
-        const typingInterval = setInterval(() => {
-            if (charIndex < textToType.length) {
-                setTypedText((prev) => prev + textToType[charIndex]);
-                charIndex++;
-            } else {
-                clearInterval(typingInterval);
-                setIsTyping(false); // Typing completed
+        let timeoutId: NodeJS.Timeout;
+        const typeText = () => {
+            if (currentIndex <= textToType.length) {
+                setDisplayedText(textToType.substring(0, currentIndex));
+                setCurrentIndex(prevIndex => prevIndex + 1);
+                timeoutId = setTimeout(typeText, 30);
             }
-        }, typingSpeed);
-
-        return () => clearInterval(typingInterval);
-    }, [textToType]);
+        };
+        timeoutId = setTimeout(typeText, 40);
+        return () => clearTimeout(timeoutId);
+    }, [textToType, currentIndex]);
 
     return (
-        <div className='max-w-[500px] bg-purple-900/20 rounded-md border border-purple-700 p-3 flex gap-2 relative overflow-hidden'>
-            <IoSparklesSharp className='text-2xl' />
-            <div className='w-11/12'>
-                <div className='text-white font-thin text-lg w-fit' id='typed-text'>
-                    {typedText}{isTyping && <span className='cursor-blink'>{"|"}</span>}
+        <div className='rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1px] pr-[1px] flex items-center justify-center !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] to-purple-900 overflow-hidden'>
+            <div className='w-[500px] bg-[#11061f] rounded-xl rounded-tl-none p-3 flex gap-2 relative overflow-hidden'>
+                <IoSparklesSharp className='text-2xl' />
+                <div className='w-11/12'>
+                    <div className='text-purple-200 font-extralight text-lg w-fit'>
+                        {displayedText}
+                        <span className='cursor-blink'>|</span>
+                    </div>
                 </div>
             </div>
         </div>

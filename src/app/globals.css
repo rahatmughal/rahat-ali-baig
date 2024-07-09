@@ -24,17 +24,42 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-    background-color: black;
-    color: white;
-} 
+  background-color: black;
+  color: white;
+}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
   .gradient-text {
     background: linear-gradient(to bottom, white, lightgray);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }  
+  }
+}
+
+
+.gradient-sparkles {
+  background: linear-gradient(to left, #3d0c67, rgb(183, 106, 255)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.cursor-blink {
+  animation: blink-animation 1s step-end infinite;
+  display: inline-block;
+  width: 0.8rem;
+  /* Adjust width of cursor as needed */
+}
+
+@keyframes blink-animation {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }

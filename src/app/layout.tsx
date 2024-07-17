@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import 'aos/dist/aos.css';
 import AppLayout from "@/app/AppLayout";
 import { ReactNode } from "react";
 
 // Initialize Inter font
-const inter = Inter({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"] });
 
 // Define metadata type
 export const metadata: Metadata = {

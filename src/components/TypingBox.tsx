@@ -26,7 +26,7 @@ const TypingBox: React.FC<TypingBoxProps> = ({ textToType }) => {
     }, [textToType, currentIndex]);
 
     return (
-        <div className='rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1px] pr-[1px] flex items-center justify-center !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] to-purple-900 overflow-hidden'>
+        <div className='rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1.3px] pr-[1px] flex items-center justify-center !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] to-purple-900 overflow-hidden'>
             <div className='w-[500px] bg-[#11061f] rounded-xl rounded-tl-none p-3 flex gap-2 relative overflow-hidden'>
                 <IoSparklesSharp className='text-2xl' />
                 <div className='w-11/12'>

@@ -15,7 +15,7 @@ const Hero = () => {
             {/* hero img */}
             <img src={heroImg} alt={heroImg} className='xl:absolute z-0 bottom-0 right-0 xl:w-1/2 w-full opacity-80' />
 
-            <div className='py-28 lg:px-20 px-12 flex flex-col justify-center w-full xl:w-3/5 min-h-screen relative'>
+            <div className='py-28 lg:px-20 px-12 flex flex-col justify-center w-full xl:w-3/5 md:min-h-screen relative'>
                 <TypingBox textToType="Hi. I'm a Full Stack Developer." />
 
                 <div className='py-10' data-aos='fade-up'>

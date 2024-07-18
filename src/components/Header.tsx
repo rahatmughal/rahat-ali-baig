@@ -52,8 +52,8 @@ const Header: React.FC = () => {
           onClick={() => setToggleNav(false)}
         />
 
-        {/* <div className="border-b border-white/30 w-full fixed md:top-[130px] top-16" />
-        <div className="border-r border-white/30 h-full fixed md:left-[130px] left-16 top-0" /> */}
+        <div className="border-b border-white/10 w-full fixed md:top-[60px] top-[30px]" />
+        <div className="border-r border-white/10 h-full fixed md:left-[60px] left-[30px] top-0" />
 
         {/* Main Navbar */}
         <div className="lg:w-11/12 w-full flex md:flex-row flex-col gap-5 items-center 2xl:px-16 xl:px-10 lg:px-8 md:px-6 px-4 lg:py-[120px] py-16">

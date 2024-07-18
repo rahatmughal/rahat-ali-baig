@@ -29,7 +29,7 @@ const About: React.FC = () => {
     return (
         <div className='py-20'>
             <div ref={aboutRef} className='w-full text-center flex flex-col gap-4 items-center px-12 relative' data-aos='zoom-in-up'>
-                <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[60px]' data-aos='zoom-in-up'>About Us</h2>
+                <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[60px]' data-aos='zoom-in-up' id="about">About Us</h2>
                 {startTyping && <TypingBox center={true} color={'hue-rotate-[140deg]'} textToType="Hi. I'm a Full Stack Developer." />}
             </div>
 

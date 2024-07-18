@@ -29,6 +29,7 @@ body {
   background-color: black;
   color: white;
   font-family: "DM Sans", sans-serif;
+  transition: linear 0.3s;
 }
 
 @layer utilities {

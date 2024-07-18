@@ -26,11 +26,11 @@ const Header: React.FC = () => {
         </div>
 
         <div className="gap-2 flex items-center">
-          {session && session.user?.image && session.user?.name && <img
+          {/* {session && session.user?.image && session.user?.name && <img
             src={session.user.image}
             alt={session.user.name}
             className="w-10 h-10 rounded-full border-2 border-white/50"
-          />}
+          />} */}
 
           {/* Menu Icon */}
           <CgMenuGridO
@@ -52,11 +52,11 @@ const Header: React.FC = () => {
           onClick={() => setToggleNav(false)}
         />
 
-        <div className="border-b border-white/30 w-full fixed md:top-[130px] top-16" />
-        <div className="border-r border-white/30 h-full fixed md:left-[130px] left-16 top-0" />
+        {/* <div className="border-b border-white/30 w-full fixed md:top-[130px] top-16" />
+        <div className="border-r border-white/30 h-full fixed md:left-[130px] left-16 top-0" /> */}
 
         {/* Main Navbar */}
-        <div className="lg:w-11/12 w-full flex md:flex-row flex-col gap-5 items-center 2xl:px-16 xl:px-10 lg:px-8 md:px-6 px-4 py-[120px]">
+        <div className="lg:w-11/12 w-full flex md:flex-row flex-col gap-5 items-center 2xl:px-16 xl:px-10 lg:px-8 md:px-6 px-4 lg:py-[120px] py-16">
           <ul className="flex flex-col 2xl:gap-16 gap-12 md:w-1/2 w-full self-start">
             {navbarItems.map((item) => (
               <li
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
           </ul>
 
           {/* Login/Logout/Profile Section */}
-          <div className="flex flex-col gap-10 items-center md:w-1/2 w-full py-20">
+          {/* <div className="flex flex-col gap-10 items-center md:w-1/2 w-full py-20">
             {session ? (
               <>
                 <button
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
                 </button>
               </>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

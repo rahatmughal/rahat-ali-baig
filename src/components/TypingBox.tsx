@@ -30,9 +30,9 @@ const TypingBox: React.FC<TypingBoxProps> = ({ textToType, center, color }) => {
     return (
         <div className={`rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1.3px] pr-[1px] flex items-center justify-center ${color ? color : ''} !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] w-fit to-purple-900 overflow-hidden`}>
             <div className='max-w-[500px] bg-[#11061f] rounded-xl rounded-tl-none p-3 flex gap-2 relative overflow-hidden'>
-                <IoSparklesSharp className='text-2xl' />
+                <IoSparklesSharp className='md:text-2xl text-lg' />
                 <div className={`w-11/12 ${center ? 'flex items-center justify-center' : ''}`}>
-                    <div className='text-purple-200 font-extralight text-lg w-fit'>
+                    <div className='text-purple-200 font-extralight md:text-lg text-sm w-fit'>
                         {displayedText}
                         <span className='cursor-blink'>|</span>
                     </div>

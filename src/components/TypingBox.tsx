@@ -5,9 +5,11 @@ import { IoSparklesSharp } from 'react-icons/io5';
 
 interface TypingBoxProps {
     textToType: string;
+    center?: boolean;
+    color?: string;
 }
 
-const TypingBox: React.FC<TypingBoxProps> = ({ textToType }) => {
+const TypingBox: React.FC<TypingBoxProps> = ({ textToType, center, color }) => {
     const [displayedText, setDisplayedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,11 +28,10 @@ const TypingBox: React.FC<TypingBoxProps> = ({ textToType }) => {
     }, [textToType, currentIndex]);
 
     return (
-        <div className='rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1.3px] pr-[1px] flex items-center justify-center !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] to-purple-900 overflow-hidden re'>
-            
-            <div className='w-[500px] bg-[#11061f] rounded-xl rounded-tl-none p-3 flex gap-2 relative overflow-hidden'>
+        <div className={`rounded-xl rounded-tl-none pt-[1.4px] pl-[1.6px] pb-[1.3px] pr-[1px] flex items-center justify-center ${color ? color : ''} !m-0 bg-gradient-to-t from-purple-500 max-w-[500px] w-fit to-purple-900 overflow-hidden`}>
+            <div className='max-w-[500px] bg-[#11061f] rounded-xl rounded-tl-none p-3 flex gap-2 relative overflow-hidden'>
                 <IoSparklesSharp className='text-2xl' />
-                <div className='w-11/12'>
+                <div className={`w-11/12 ${center ? 'flex items-center justify-center' : ''}`}>
                     <div className='text-purple-200 font-extralight text-lg w-fit'>
                         {displayedText}
                         <span className='cursor-blink'>|</span>

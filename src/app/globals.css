@@ -18,6 +18,11 @@
   }
 }
 */
+* {
+  transition: all linear 0.3s;
+  color: white;
+}
+
 body {
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -29,7 +34,6 @@ body {
   background-color: black;
   color: white;
   font-family: "DM Sans", sans-serif;
-  transition: linear 0.3s;
 }
 
 @layer utilities {
@@ -41,6 +45,10 @@ body {
     background: linear-gradient(to bottom, white, lightgray);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .w-1200 {
+    width: 1200px;
   }
 }
 
@@ -103,6 +111,290 @@ body {
   height: 200px;
   background-color: rgb(0, 0, 0);
   bottom: -300px;
-  transform: skewY(-7deg); /* Adjust the angle as needed */
+  transform: skewY(-7deg);
+  /* Adjust the angle as needed */
   transform-origin: top left;
 }
+
+.career-flow {
+  display: flex;
+  flex-direction: row;
+  width: 3000px;
+  background-color: rgba(128, 128, 128, 0.158);
+  height: 100vh;
+  position: sticky;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.career-flow {
+  /* height: 100vh; */
+  width: 3000px;
+}
+
+
+
+
+
+
+section {
+  height: 100vh;
+}
+
+.scroll-container {
+  padding: 5rem;
+}
+
+.scroll-container h1 {
+  font-size: 4rem;
+}
+
+.scroll-container p {
+  width: 50%;
+  margin: 2rem 0;
+}
+
+.sticky_parent {
+  height: 400vh;
+  width: 100%;
+}
+
+.sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0px;
+  height: 1400px;
+}
+
+.scroll_section {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2400px; /* Updated width to pixels */
+  will-change: transform;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 5vw;
+}
+
+
+
+.react-flow {
+  --bg-color: rgb(17, 17, 17);
+  --text-color: rgb(243, 244, 246);
+  --node-border-radius: 10px;
+  --node-box-shadow: 10px 0 15px rgba(42, 138, 246, 0.3),
+    -10px 0 15px rgba(233, 42, 103, 0.3);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.react-flow__node-turbo {
+  border-radius: var(--node-border-radius);
+  display: flex;
+  height: 70px;
+  min-width: 150px;
+  font-family: 'Fira Mono', Monospace;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  box-shadow: var(--node-box-shadow);
+}
+
+.react-flow__node-turbo .wrapper {
+  overflow: hidden;
+  display: flex;
+  padding: 2px;
+  position: relative;
+  border-radius: var(--node-border-radius);
+  flex-grow: 1;
+}
+
+.gradient:before {
+  content: '';
+  position: absolute;
+  padding-bottom: calc(100% * 1.41421356237);
+  width: calc(100% * 1.41421356237);
+  background: conic-gradient(from -160deg at 50% 50%,
+      #e92a67 0deg,
+      #a853ba 120deg,
+      #2a8af6 240deg,
+      #e92a67 360deg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+
+.react-flow__node-turbo.selected .wrapper.gradient:before {
+  content: '';
+  background: conic-gradient(from -160deg at 50% 50%,
+      #e92a67 0deg,
+      #a853ba 120deg,
+      #2a8af6 240deg,
+      rgba(42, 138, 246, 0) 360deg);
+  animation: spinner 4s linear infinite;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: -1;
+}
+
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.react-flow__node-turbo .inner {
+  background: var(--bg-color);
+  padding: 16px 20px;
+  border-radius: var(--node-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+.react-flow__node-turbo .icon {
+  margin-right: 8px;
+}
+
+.react-flow__node-turbo .body {
+  display: flex;
+}
+
+.react-flow__node-turbo .title {
+  font-size: 16px;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.react-flow__node-turbo .subline {
+  font-size: 12px;
+  color: #777;
+}
+
+.react-flow__node-turbo .cloud {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  transform: translate(50%, -50%);
+  display: flex;
+  transform-origin: center center;
+  padding: 2px;
+  overflow: hidden;
+  box-shadow: var(--node-box-shadow);
+  z-index: 1;
+}
+
+.react-flow__node-turbo .cloud div {
+  background-color: var(--bg-color);
+  flex-grow: 1;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow__handle.source {
+  right: -10px;
+}
+
+.react-flow__handle.target {
+  left: -10px;
+}
+
+.react-flow__node:focus {
+  outline: none;
+}
+
+.react-flow__edge .react-flow__edge-path {
+  stroke: url(#edge-gradient);
+  stroke-width: 2;
+  stroke-opacity: 0.75;
+}
+
+.react-flow__controls button {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid #95679e;
+  border-bottom: none;
+}
+
+.react-flow__controls button:hover {
+  background-color: rgb(37, 37, 37);
+}
+
+.react-flow__controls button:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.react-flow__controls button:last-child {
+  border-bottom: 1px solid #95679e;
+  border-radius: 0 0 5px 5px;
+}
+
+.react-flow__controls button path {
+  fill: var(--text-color);
+}
+
+.react-flow__attribution {
+  background: rgba(200, 200, 200, 0.2);
+}
+
+.react-flow__attribution a {
+  color: #95679e;
+}
+
+
+/* ---------------- Career Flow ------------------- */
+@keyframes ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ring {
+  animation: ring 1.5s infinite;
+}
+
+
+.middle-gradient {
+  @apply bg-gradient-to-tr from-light-green to-gray-700 w-full h-full scale-105 -translate-x-1 -translate-y-1 rounded-lg p-0.5 relative;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.middle-gradient:hover {
+  transform: rotate(6deg);
+}
+
+.inner-content {
+  @apply bg-black w-[400px] p-4 rounded-lg relative z-10;
+}
+
+
+
+
+

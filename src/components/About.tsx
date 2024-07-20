@@ -27,17 +27,17 @@ const About: React.FC = () => {
     }, [aboutRef]);
 
     return (
-        <div className='py-20'>
+        <div className='py-20 w-full' id="about-us">
             <div ref={aboutRef} className='w-full text-center flex flex-col gap-4 items-center px-12 relative' data-aos='zoom-in-up'>
-                <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[48px]' data-aos='zoom-in-up' id="about">About Us</h2>
-                {startTyping && <TypingBox center={true} color={'hue-rotate-[140deg]'} textToType="Hi. I'm a Full Stack Developer." />}
+                <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[48px]' data-aos='zoom-in-up' >About Us</h2>
+                {startTyping && <TypingBox center={true} color={'hue-rotate-[140deg]'} textToType="Learn more about my journey and skills." />}
             </div>
 
             <div className='w-full lg:px-20 px-10 mb-10 flex items-center lg:flex-row flex-col justify-center gap-6'>
                 {/* Left Image */}
                 <div className='lg:w-1/2 lg:block flex items-center justify-center w-full py-20' data-aos='fade-right'>
                     {/* img-box */}
-                    <div className="lg:w-full h-full flex items-center py-5 -ml-16 relative">
+                    <div className="lg:w-full h-full flex items-center py-5 md:ml-0 -ml-16 relative">
                         <div className="2xl:w-80 md:w-60 w-48 2xl:h-[500px] md:h-[370px] h-[300px] border-[3px] rounded-tl-[40px] translate-x-[0.5rem] translate-y-[0.5rem] rounded-br-[40px] border-[#fcb63485] " />
                         <div
                             className="2xl:w-80 md:w-60 w-48 2xl:h-[500px] md:h-[370px] h-[300px] rounded-tl-[40px] rounded-br-[40px] absolute md:translate-x-[6rem] translate-y-[5rem] md:translate-y-[6rem] translate-x-[5rem]"

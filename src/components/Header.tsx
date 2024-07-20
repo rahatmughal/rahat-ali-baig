@@ -3,19 +3,19 @@ import React, { useEffect, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { IoCloseOutline } from "react-icons/io5";
 import { navbarItems } from "@/constants";
-import { FaGithub } from "react-icons/fa";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { FcGoogle } from "react-icons/fc";
+// import { FaGithub } from "react-icons/fa";
+// import { signIn, signOut, useSession } from "next-auth/react";
+// import { FcGoogle } from "react-icons/fc";
 
 const Header: React.FC = () => {
   const [toggleNav, setToggleNav] = useState<boolean>(false);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
-  useEffect(() => {
-    if (session) {
-      console.log("User session data:", session);
-    }
-  }, [session]);
+  // useEffect(() => {
+  //   if (session) {
+  //     console.log("User session data:", session);
+  //   }
+  // }, [session]);
 
   return (
     <>
@@ -63,6 +63,7 @@ const Header: React.FC = () => {
                 key={item.id}
                 className={`2xl:text-5xl text-4xl font-extralight transition-all duration-700 hover:translate-x-4 ${toggleNav ? "translate-y-6" : "-translate-y-6 opacity-0"
                   }`}
+                onClick={() => setToggleNav(false)}
               >
                 <Link href={item.link}>{item.name}</Link>
               </li>

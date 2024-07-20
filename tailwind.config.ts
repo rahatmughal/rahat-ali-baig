@@ -15,6 +15,9 @@ const config: Config = {
       },
       fontFamily: {
         'DM-Sans': ["DM Sans", 'sans-serif'],
+      },
+      colors: {
+        'light-green': '#9dff2d'
       }
     },
   },

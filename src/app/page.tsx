@@ -1,8 +1,10 @@
 "use client";
 
 import About from "@/components/About";
+import Career from "@/components/Career";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import AOS from "aos";
 import { useEffect } from "react";
 
@@ -16,7 +18,9 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <div className="h-screen"></div>
+      <Career />
+      <div className="w-full h-screen bg-white/10"></div>
+      {/* <Services /> */}
     </main>
   );
 }

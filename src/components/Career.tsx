@@ -28,22 +28,27 @@ const Career: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const stickySections = document.querySelector<HTMLElement>('.sticky');
+            const stickySection = document.querySelector<HTMLElement>('.sticky');
 
-            if (stickySections) {
-                const offsetTop = stickySections.parentElement?.offsetTop || 0;
-                const scrollSection = stickySections.querySelector<HTMLElement>('.scroll_section');
+            if (stickySection) {
+                const parentElement = stickySection.parentElement;
 
-                const sectionWidth = scrollSection?.offsetWidth || 0;
-                const viewportHeight = window.innerHeight;
-                const scrollY = window.scrollY;
+                if (parentElement) {
+                    const offsetTop = parentElement.offsetTop || 0;
+                    const scrollSection = stickySection.querySelector<HTMLElement>('.scroll_section');
 
-                let percentage = ((scrollY - offsetTop) / viewportHeight) * 100;
-                percentage = Math.max(0, Math.min(percentage, 100));
+                    if (scrollSection) {
+                        const sectionWidth = scrollSection.offsetWidth || 0;
+                        const viewportHeight = window.innerHeight;
+                        const scrollY = window.scrollY;
 
-                if (scrollSection) {
-                    const translateX = (sectionWidth - window.innerWidth) * (percentage / 100);
-                    scrollSection.style.transform = `translate3d(-${translateX}px, 0, 0)`;
+                        // Calculate the percentage of the scroll position
+                        let percentage = (scrollY - offsetTop) / (parentElement.scrollHeight - viewportHeight);
+                        percentage = Math.max(0, Math.min(percentage, 1));
+
+                        const translateX = (sectionWidth - window.innerWidth) * percentage;
+                        scrollSection.style.transform = `translate3d(-${translateX}px, 0, 0)`;
+                    }
                 }
             }
         };
@@ -54,7 +59,6 @@ const Career: React.FC = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
     return (
         <>
             <div className='pt-20 pb-6 w-full' id="career">

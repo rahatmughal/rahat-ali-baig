@@ -178,7 +178,9 @@ section {
   justify-content: flex-start;
   align-items: center;
   padding: 0 5vw;
+  transition: transform 0.3s ease-out; /* Smooth transition */
 }
+
 
 
 

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import TypingBox from './TypingBox';
 import Content from './Content';
+import { grid } from '../../public';
 
 const Career: React.FC = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
@@ -61,7 +62,7 @@ const Career: React.FC = () => {
     }, []);
     return (
         <>
-            <div className='pt-20 pb-6 w-full' id="career">
+            <div className='py-2 w-full' id="career">
                 <div ref={aboutRef} className='w-full text-center flex flex-col gap-4 items-center px-12 relative' data-aos='zoom-in-up'>
                     <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[48px]'>Career</h2>
                     {startTyping && <TypingBox center={true} color={'hue-rotate-[170deg]'} textToType="Here is my journey!" />}
@@ -70,7 +71,28 @@ const Career: React.FC = () => {
 
             <div className="sticky_parent w-full">
                 <div className="sticky">
-                    <div className="scroll_section">
+                    <div className='absolute w-screen h-screen top-0 left-0'>
+                        <div className='w-full h-full filter-white'>
+                            <img
+                                src={grid}
+                                alt={grid}
+                                className='w-full'
+                                data-aos='fade-up'
+                                data-aos-duration='2500'
+                                data-aos-easing='ease-in-out'
+                            />
+                        </div>
+                        <div className='w-full absolute top-0 left-0 z-10 h-[300px] bg-gradient-to-b from-black from-20% to-transparent' />
+                        <div className='w-full absolute bottom-0 left-0 z-10 h-[300px] bg-gradient-to-t from-black from-20% to-transparent' />
+                        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-white blur-[180px] rounded-full' />
+                        <div className='absolute top-1/2  left-1/2 w-[100px] h-[100px] bg-green-600 blur-[80px] rounded-full' />
+                        <div className='absolute top-1/2  left-1/2 w-[300px] h-[300px] bg-green-800 blur-[250px] rounded-full' />
+
+                        <div className='absolute -bottom-10 -left-10 z-20 w-[300px] h-[300px] bg-green-600 blur-[240px] rounded-full' />
+                        {/* <div className='absolute top-1/2 -translate-y-1/2 -left-1/2 translate-x-1/2 z-20 w-[300px] h-[100px] bg-light-green blur-[140px] rounded-full' /> */}
+                    </div>
+
+                    <div className="scroll_section z-30">
                         <Content />
                     </div>
                 </div>

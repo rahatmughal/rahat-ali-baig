@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     <>
       <div className="w-full z-50 p-5 border-b bg-black border-b-white border-opacity-30 flex items-center justify-between top-0 fixed">
         {/* Logo */}
-        <div className="text-xl tracking-widest gradient-text font-semibold">
+        <div className="text-xl tracking-widest font-medium logo-anim">
           <Link href="/">RAHAT ALI BAIG</Link>
         </div>
 

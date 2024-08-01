@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +32,7 @@ body {
     rgb(var(--background-start-rgb)); */
   background-color: black;
   color: white;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 @layer utilities {
@@ -41,23 +40,84 @@ body {
     text-wrap: balance;
   }
 
-  .gradient-text {
-    background: linear-gradient(to bottom, white, lightgray);
+
+  .logo-anim {
+    color: #fff;
+    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+    background-position: 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
   }
+
+  @-moz-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+
+    60% {
+      background-position: 180px;
+    }
+
+    100% {
+      background-position: 180px;
+    }
+  }
+
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+
+    60% {
+      background-position: 180px;
+    }
+
+    100% {
+      background-position: 180px;
+    }
+  }
+
+  @-o-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+
+    60% {
+      background-position: 180px;
+    }
+
+    100% {
+      background-position: 180px;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+
+    60% {
+      background-position: 180px;
+    }
+
+    100% {
+      background-position: 180px;
+    }
+  }
+
 
   .w-1200 {
     width: 1200px;
   }
 }
 
-
-.gradient-sparkles {
-  background: linear-gradient(to left, #3d0c67, rgb(183, 106, 255)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
 
 .cursor-blink {
   animation: blink-animation 1s step-end infinite;
@@ -76,7 +136,7 @@ body {
   }
 }
 
-.video-container {
+/* .video-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -112,9 +172,42 @@ body {
   background-color: rgb(0, 0, 0);
   bottom: -300px;
   transform: skewY(-7deg);
-  /* Adjust the angle as needed */
   transform-origin: top left;
+} */
+
+
+@keyframes gradient-random {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
+.random-gradient-text {
+  background: linear-gradient(270deg, #a855f7, #1200d4, #00c0aa, #3b82f6, #66fffc);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-random 10s ease infinite;
+}
+
+
 
 .career-flow {
   display: flex;
@@ -143,42 +236,33 @@ section {
   height: 100vh;
 }
 
-.scroll-container {
-  padding: 5rem;
-}
-
-.scroll-container h1 {
-  font-size: 4rem;
-}
-
-.scroll-container p {
-  width: 50%;
-  margin: 2rem 0;
-}
-
 .sticky_parent {
-  height: 400vh; /* Adjust this value based on your content */
+  height: 400vh;
   width: 100%;
+  margin-top: -60px;
+  z-index: -1;
 }
 
 .sticky {
   overflow: hidden;
   position: sticky;
   top: 0px;
-  height: 100vh; /* Ensures the sticky element stays within the viewport height */
+  height: 100vh;
 }
 
 .scroll_section {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 15226px; /* Adjust the width based on the content length */
+  width: 15226px;
+  /* Adjust the width based on the content length */
   will-change: transform;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0 5vw;
-  transition: transform 0.3s ease-out; /* Smooth transition */
+  transition: transform 0.3s ease-out;
+  /* Smooth transition */
 }
 
 
@@ -398,7 +482,44 @@ section {
   @apply bg-black w-[400px] p-4 rounded-lg relative z-10;
 }
 
+.filter-white {
+  filter: brightness(120%) hue-rotate(270deg) !important;
+}
+
+.gradient-shape {
+  width: 300px;
+  height: 200px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 223, 0, 0.7), transparent 70%),
+    radial-gradient(circle at 80% 70%, rgba(255, 0, 150, 0.7), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.7), transparent 70%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
 
 
 
+.circuit-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
+.circuit-animation path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: circuitDraw 4s infinite linear;
+}
+
+@keyframes circuitDraw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

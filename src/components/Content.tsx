@@ -1,9 +1,10 @@
 import React from 'react'
 import { IconType } from 'react-icons';
 import { BiLogoJquery } from 'react-icons/bi';
-import { FaBootstrap, FaReact } from 'react-icons/fa';
+import { FaBootstrap, FaNodeJs, FaReact } from 'react-icons/fa';
 import { IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from 'react-icons/ri';
+import { SiExpress, SiMysql, SiNextdotjs } from 'react-icons/si';
 
 interface JointProps {
     x: string;
@@ -62,7 +63,8 @@ const Content = () => {
 
     return (
         <>
-            <div className='w-1200 h-[600px] relative'>
+            <div className='w-full h-[600px] relative z-30'>
+                <div className='absolute w-screen h-screen top-0'></div>
                 {/* HTML */}
                 <>
                     <Joint x='left-10' y='top-1/2 -translate-y-1/2' />
@@ -147,9 +149,9 @@ const Content = () => {
                         y='top-[200px]'
                     />
                 </>
-                
-                 {/* Tailwinds */}
-                 <>
+
+                {/* React */}
+                <>
                     <Edge rotate='rotate-[15deg]' x='left-[5100px]' y='top-[450px]' />
                     <Joint x='left-[5395px]' y='top-[482px]' />
                     <Edge rotate='rotate-[-60deg]' x='left-[5335px]' y='top-[352px]' />
@@ -159,6 +161,75 @@ const Content = () => {
                         description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
                         x='left-[5555px]'
                         y='top-[100px]'
+                    />
+                </>
+
+                {/* Next */}
+                <>
+                    <Edge rotate='rotate-[-20deg]' x='left-[5900px]' y='top-[100px]' />
+                    <Joint x='left-[6190px]' y='top-[35px]' />
+                    <Edge rotate='rotate-[10deg]' x='left-[6208px]' y='top-[75px]' />
+                    <SkillCard
+                        icon={SiNextdotjs}
+                        title={'Next JS'}
+                        description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
+                        x='left-[6450px]'
+                        y='top-[70px]'
+                    />
+                </>
+                {/* Node */}
+                <>
+                    <Edge rotate='rotate-[20deg]' x='left-[6780px]' y='top-[300px]' />
+                    <Joint x='left-[7068px]' y='top-[345px]' />
+                    <Edge rotate='rotate-[30deg]' x='left-[7065px]' y='top-[430px]' />
+                    <SkillCard
+                        icon={FaNodeJs}
+                        title={'Node JS'}
+                        description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
+                        x='left-[7330px]'
+                        y='top-[470px]'
+                    />
+                </>
+
+                {/* Express */}
+                <>
+                    <Edge rotate='rotate-[-30deg]' x='left-[7680px]' y='top-[480px]' />
+                    <Joint x='left-[7958px]' y='top-[390px]' />
+                    <Edge rotate='rotate-[5deg]' x='left-[7978px]' y='top-[415px]' />
+                    <SkillCard
+                        icon={FaNodeJs}
+                        title={'Express JS'}
+                        description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
+                        x='left-[8260px]'
+                        y='top-[200px]'
+                    />
+                </>
+
+                {/* MongoDB */}
+                <>
+                    <Edge rotate='rotate-[-30deg]' x='left-[7680px]' y='top-[480px]' />
+                    <Joint x='left-[7958px]' y='top-[390px]' />
+                    <Edge rotate='rotate-[5deg]' x='left-[7978px]' y='top-[415px]' />
+                    <SkillCard
+                        icon={SiExpress}
+                        title={'Express JS'}
+                        description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
+                        x='left-[8260px]'
+                        y='top-[200px]'
+                    />
+                </>
+
+                {/* MySQL */}
+                <>
+                    <Edge rotate='rotate-[-30deg]' x='left-[7680px]' y='top-[480px]' />
+                    <Joint x='left-[7958px]' y='top-[390px]' />
+                    <Edge rotate='rotate-[5deg]' x='left-[7978px]' y='top-[415px]' />
+                    <SkillCard
+                        icon={SiMysql}
+                        title={'MySQL'}
+                        description={'After mastering the basics, I took a step towards becoming a modern Full Stack developer by diving into frameworks and libraries. I began with Tailwind CSS and created two initial projects: HooBank and Green Nursery.'}
+                        x='left-[8260px]'
+                        y='top-[200px]'
                     />
                 </>
             </div>

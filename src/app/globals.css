@@ -43,81 +43,38 @@ body {
 
   .logo-anim {
     color: #fff;
-    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+    background: linear-gradient(to right, #9f9f9f 0%, #fff 10%, #868686 20%);
+    background-size: 200%;
+    /* Increase background size to allow movement */
     background-position: 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 5s infinite linear;
     animation-delay: 3s;
     animation-fill-mode: forwards;
-    -webkit-text-size-adjust: none;
     text-decoration: none;
     white-space: nowrap;
     font-family: "Poppins", sans-serif;
   }
 
-  @-moz-keyframes shine {
-    0% {
-      background-position: 0;
-    }
-
-    60% {
-      background-position: 180px;
-    }
-
-    100% {
-      background-position: 180px;
-    }
-  }
-
-  @-webkit-keyframes shine {
-    0% {
-      background-position: 0;
-    }
-
-    60% {
-      background-position: 180px;
-    }
-
-    100% {
-      background-position: 180px;
-    }
-  }
-
-  @-o-keyframes shine {
-    0% {
-      background-position: 0;
-    }
-
-    60% {
-      background-position: 180px;
-    }
-
-    100% {
-      background-position: 180px;
-    }
-  }
-
   @keyframes shine {
     0% {
-      background-position: 0;
+      background-position: 200%;
     }
 
     60% {
-      background-position: 180px;
+      background-position: 100%;
     }
 
     100% {
-      background-position: 180px;
+      background-position: 0%;
     }
   }
-
 
   .w-1200 {
     width: 1200px;
   }
 }
-
 
 .cursor-blink {
   animation: blink-animation 1s step-end infinite;
@@ -194,7 +151,7 @@ body {
   }
 
   100% {
-    background-position: 0% 50%;
+    background-position: 100% 120%;
   }
 }
 
@@ -229,18 +186,10 @@ body {
 
 
 
-
-
-
-section {
-  height: 100vh;
-}
-
+/* Hybrid Scroll */
 .sticky_parent {
   height: 400vh;
   width: 100%;
-  margin-top: -60px;
-  z-index: -1;
 }
 
 .sticky {

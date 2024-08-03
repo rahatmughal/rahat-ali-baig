@@ -9,6 +9,8 @@ import { navbarItems } from "@/constants";
 
 const Header: React.FC = () => {
   const [toggleNav, setToggleNav] = useState<boolean>(false);
+  const [bgColor, setBgColor] = useState<boolean>(false);
+
   // const { data: session } = useSession();
 
   // useEffect(() => {
@@ -17,9 +19,27 @@ const Header: React.FC = () => {
   //   }
   // }, [session]);
 
+  useEffect(() => {
+    const handleBackgroundColor = () => {
+      if (window.scrollY > 300) {
+        setBgColor(true);
+      } else {
+        setBgColor(false);
+      }
+    };
+  
+    window.addEventListener('scroll', handleBackgroundColor);
+  
+    return () => {
+      window.removeEventListener('scroll', handleBackgroundColor);
+    };
+  }, []);
+  
+
+
   return (
     <>
-      <div className="w-full z-50 p-5 border-b bg-black border-b-white border-opacity-30 flex items-center justify-between top-0 fixed">
+      <div className={`w-full z-50 p-5 border-b ${!bgColor ? 'bg-transparent' : 'bg-black'} border-b-white border-opacity-10 flex items-center justify-between top-0 fixed`}>
         {/* Logo */}
         <div className="text-xl tracking-widest font-medium logo-anim">
           <Link href="/">RAHAT ALI BAIG</Link>

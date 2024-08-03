@@ -49,7 +49,6 @@ class Grid {
   private bubble: number;
   private cells: number;
   private ms: Point | null = null;
-  private pts: (Part | undefined)[] = [];
   private sqs: (Cell | undefined)[] = [];
 
   constructor(ctx: CanvasRenderingContext2D, w: number, h: number, bubble: number, cells: number) {
@@ -86,7 +85,9 @@ class Grid {
           const p2 = this.pts[pindx(x, y - 1) as number];
           const p3 = this.pts[pindx(x, y) as number];
           const p4 = this.pts[pindx(x - 1, y) as number];
-          this.sqs[idxc as number] = new Cell({ p1, p2, p3, p4 });
+          if (p1 && p2 && p3 && p4) {
+            this.sqs[idxc as number] = new Cell({ p1, p2, p3, p4 });
+          }
         }
       }
     }
@@ -136,6 +137,10 @@ class Grid {
       if (sq) sq.draw(this.ctx);
     }
   }
+
+  public setMousePosition(point: Point) {
+    this.ms = point;
+  } private pts: (Part | undefined)[] = [];
 }
 
 class Part {
@@ -159,7 +164,7 @@ class Part {
   }
 }
 
-const SpotlightAnimation: React.FC = () => {
+const DotsBG: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -173,21 +178,21 @@ const SpotlightAnimation: React.FC = () => {
     const h = window.innerHeight;
     canvas.width = w;
     canvas.height = h;
-    
+
     ctx.fillStyle = 'rgba(0,0,0,1)';
     ctx.fillRect(0, 0, w, h);
 
-    const bubble = 300; 
-    const cells = 30; 
+    const bubble = 300;
+    const cells = 30;
     const grid = new Grid(ctx, w, h, bubble, cells);
 
     window.addEventListener('mousemove', (e: MouseEvent) => {
-      grid.ms = { x: e.clientX, y: e.clientY };
+      grid.setMousePosition({ x: e.clientX, y: e.clientY });
     }, false);
 
     window.addEventListener('touchmove', (e: TouchEvent) => {
       e.preventDefault();
-      grid.ms = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      grid.setMousePosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
     }, false);
 
     function load() {
@@ -208,4 +213,4 @@ const SpotlightAnimation: React.FC = () => {
   );
 };
 
-export default SpotlightAnimation;
+export default DotsBG;

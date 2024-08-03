@@ -39,7 +39,7 @@ const Content = () => {
 
 
     const SkillCard = ({ icon: Icon, title, description, x, y }: CardProps) => (
-        <div className={`absolute z-30 ${y} ${x} w-fit h-fit group`}>
+        <div className={`absolute z-30 ${y} ${x} w-fit h-fit`}>
             <div className='relative w-fit h-fit group'>
                 {/* Card Container */}
                 <div className="relative rounded-2xl overflow-hidden p-0.5 pl-1 pb-1">

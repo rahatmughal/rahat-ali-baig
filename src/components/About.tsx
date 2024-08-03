@@ -30,14 +30,18 @@ const About: React.FC = () => {
         <div className='py-20 w-full' id="about-us">
             <div ref={aboutRef} className='w-full text-center flex flex-col gap-4 items-center px-12 relative' data-aos='zoom-in-up'>
                 <h2 className='text-white/10 font-semibold 2xl:text-[200px] xl:text-[160px] lg:text-[120px] md:text-[100px] sm:text-[80px] text-[48px]' data-aos='zoom-in-up' >About Us</h2>
-                {startTyping && <TypingBox center={true} color={'hue-rotate-[140deg]'} textToType="Learn more about my journey and skills." />}
+                {startTyping && <TypingBox center={true} color={'hue-rotate-[140deg]'} textToType="Explore my Journey & Skills" />}
             </div>
 
-            <div className='w-full lg:px-20 px-10 mb-10 flex items-center lg:flex-row flex-col justify-center gap-6'>
+            <div className='w-full lg:px-20 px-10 mb-10 flex items-center lg:flex-row flex-col justify-center gap-6 relative'>
+
+                <div className='w-[460px] h-[460px] rounded-full absolute top-1/2 -translate-y-1/2 -left-10 bg-yellow-500 blur-[400px]' />
+                <div className='w-[300px] h-[300px] rounded-full absolute -translate-y-1/2 -left-10 bg-yellow-600 blur-[240px]' />
+
                 {/* Left Image */}
-                <div className='lg:w-1/2 lg:block flex items-center justify-center w-full py-20' data-aos='fade-right'>
+                <div className='lg:w-1/2 flex items-center justify-center w-full py-20' data-aos='fade-right'>
                     {/* img-box */}
-                    <div className="lg:w-full h-full flex items-center py-5 md:ml-0 -ml-16 relative">
+                    <div className="lg:w-fit h-full flex items-center py-5 md:ml-0 -ml-16 relative">
                         <div className="2xl:w-80 md:w-60 w-48 2xl:h-[500px] md:h-[370px] h-[300px] border-[3px] rounded-tl-[40px] translate-x-[0.5rem] translate-y-[0.5rem] rounded-br-[40px] border-[#fcb63485] " />
                         <div
                             className="2xl:w-80 md:w-60 w-48 2xl:h-[500px] md:h-[370px] h-[300px] rounded-tl-[40px] rounded-br-[40px] absolute md:translate-x-[6rem] translate-y-[5rem] md:translate-y-[6rem] translate-x-[5rem]"
@@ -56,17 +60,17 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Right Content */}
-                <div className="xl:w-full lg:w-3/5 w-full h-full flex justify-between lg:gap-10 gap-5 flex-grow lg:px-4 pt-8" data-aos='fade-right'>
+                <div className="xl:w-2/5 lg:w-3/5 w-full h-full flex justify-between lg:gap-10 gap-5 flex-grow lg:px-4 pt-8" data-aos='fade-right'>
                     {/* separator */}
-                    <div className='w-0.5 2xl:h-[310px] xl:h-[350px] relative bg-gradient-to-b from-yellow-800 to-yellow-400 before:content-normal before:absolute before:top-0 before:right-1/2 before:translate-x-1/2 before:w-4 before:h-4 before:rounded-full before:bg-yellow-900 after:content-normal after:absolute after:bottom-0 after:right-1/2 after:translate-x-1/2 after:w-4 after:h-4 after:rounded-full after:bg-yellow-400' data-aos='fade-right' data-aos-duration="1000" />
+                    <div className='w-0.5 relative bg-gradient-to-b from-yellow-800 to-yellow-400 before:content-normal before:absolute before:top-0 before:right-1/2 before:translate-x-1/2 before:w-4 before:h-4 before:rounded-full before:bg-yellow-900 after:content-normal after:absolute after:bottom-0 after:right-1/2 after:translate-x-1/2 after:w-4 after:h-4 after:rounded-full after:bg-yellow-400' data-aos='fade-right' data-aos-duration="1000" />
 
                     {/*Content  */}
                     <div className='flex-grow w-4/5' data-aos='fade-right' data-aos-duration="700">
-                        <h2 className="xl:text-5xl md:text-4xl text-2xl font-medium">
+                        <h2 className="xl:text-5xl md:text-4xl text-2xl font-ex">
                             My Journey
                         </h2>
 
-                        <p className="2xl:text-2xl xl:text-xl lg:texl-lg md:text-base text-sm mt-4 font-thin leading-loose tracking-widest">
+                        <p className="2xl:text-2xl xl:text-xl lg:texl-lg md:text-base text-sm mt-4 !font-thin opacity-60 !leading-[44px] tracking-widest">
                             I started my career as a graphics designer in the summer of 2020, creating basic logos for local businesses.
                             Over time, I mastered the tools required for logo design, gaining two years of experience with Adobe Illustrator.
                             Now, I've transitioned into web development, building multiple web pages with HTML, CSS, and JavaScript.

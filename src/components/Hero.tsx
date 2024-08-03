@@ -2,7 +2,7 @@
 import React from 'react';
 import 'aos/dist/aos.css';
 import TypingBox from './TypingBox';
-import SpotlightAnimation from './SpotlightAnimation';
+import DotsBG from './DotsBG';
 
 const Hero: React.FC = () => {
 
@@ -10,19 +10,19 @@ const Hero: React.FC = () => {
         <div className='w-full min-h-screen flex items-center justify-start gap-6 relative overflow-hidden'>
             {/* hero img */}
 
-            <SpotlightAnimation />
+            <DotsBG />
             <div className='absolute -top-10 left-10 w-[200px] h-[200px] rounded-full bg-blue-700 blur-[200px]' />
             <div className='absolute -top-10 right-10 w-[200px] h-[200px] rounded-full  bg-cyan-600 blur-[200px]' />
             <div className='absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-purple-800 blur-[400px]' />
-            <div className='absolute bottom-0 w-full h-[300px] rounded-full  bg-gradient-to-t from-black to-transparent' />
+            <div className='absolute bottom-0 w-full h-[300px] rounded-full bg-gradient-to-t from-black to-transparent' />
 
             {/* Content Box */}
             <div className='py-28 lg:px-20 px-12 flex flex-col justify-center items-center w-full md:min-h-screen relative'>
                 <TypingBox color='hue-rotate-[-30deg]' textToType="Hi. I'm a Full Stack Developer." />
 
                 <div className='py-10' data-aos='fade-up'>
-                    <p className="xl:text-[140px] text-center md:text-9xl sm:text-7xl text-6xl font-extralight !leading-snug random-gradient-text">
-                        Mirza Rahat Ali Baig
+                    <p className="text-center xl:text-9xl md:text-8xl sm:text-7xl text-6xl font-medium !leading-snug random-gradient-text">
+                        Crafting Ideas that Excel Digital World!
                     </p>
 
                 </div>

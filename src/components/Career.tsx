@@ -82,17 +82,16 @@ const Career: React.FC = () => {
                                 data-aos-easing='ease-in-out'
                             />
                         </div>
-                        <div className='w-full absolute top-0 left-0 z-10 h-[300px] bg-gradient-to-b from-black from-20% to-transparent' />
-                        <div className='w-full absolute bottom-0 left-0 z-10 h-[300px] bg-gradient-to-t from-black from-20% to-transparent' />
+                       
+                        <div className='w-full absolute top-0 left-0 h-[300px] bg-gradient-to-b from-black from-20% to-transparent' />
+                        <div className='w-full absolute bottom-0 left-0 h-[300px] bg-gradient-to-t from-black from-20% to-transparent' />
                         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-white blur-[180px] rounded-full' />
                         <div className='absolute top-1/2  left-1/2 w-[100px] h-[100px] bg-green-600 blur-[80px] rounded-full' />
                         <div className='absolute top-1/2  left-1/2 w-[300px] h-[300px] bg-green-800 blur-[250px] rounded-full' />
-
                         <div className='absolute -bottom-10 -left-10 z-20 w-[300px] h-[300px] bg-green-600 blur-[240px] rounded-full' />
-                        {/* <div className='absolute top-1/2 -translate-y-1/2 -left-1/2 translate-x-1/2 z-20 w-[300px] h-[100px] bg-light-green blur-[140px] rounded-full' /> */}
                     </div>
 
-                    <div className="scroll_section z-30">
+                    <div className="scroll_section">
                         <Content />
                     </div>
                 </div>
